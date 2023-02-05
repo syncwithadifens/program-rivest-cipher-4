@@ -26,6 +26,7 @@ function rc4($key, $str)
     return $res;
 }
 
+// NOTE: process encryption if btn encrypt clicked
 if (isset($_POST['btn-encrypt'])) {
     $plaintext = $_POST['plaintext'];
     $key = $_POST['key'];
@@ -36,6 +37,7 @@ if (isset($_POST['btn-encrypt'])) {
         $encodedCipher = 'Plaintext & Key is required';
     }
 }
+// NOTE: process decryption if btn decrypt clicked
 if (isset($_POST['btn-decrypt'])) {
     $encodedCipher = $_POST['ciphertext'];
     $key = $_POST['key'];
@@ -45,6 +47,7 @@ if (isset($_POST['btn-decrypt'])) {
         $decrypted = 'Ciphertext & Key is required';
     }
 }
+// NOTE: reset value
 if (isset($_POST['btn-reset'])) {
     $ciphertext = '';
 }
